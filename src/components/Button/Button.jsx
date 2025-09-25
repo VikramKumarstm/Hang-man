@@ -1,10 +1,15 @@
 import React from 'react'
+import buttonStyling from './getStyleType'
 
-function Button() {
+function Button({ text, buttonType, styleType, onClickHandler }) {
   return (
-    <>
-        <button>Click me</button>
-    </>
+    <button 
+        onClick={onClickHandler}
+        type={buttonType}
+        className={` ${buttonStyling(styleType)} px-4 py-2 text-white rounded-md transition-all cursor-pointer`}
+    >
+        {text}
+    </button>
   )
 }
 
