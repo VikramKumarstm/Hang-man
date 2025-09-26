@@ -1,7 +1,7 @@
 import React from 'react'
 import buttonStyling from './getStyleType'
 
-function Button({ text, buttonType, styleType, onClickHandler }) {
+function Button({ text, buttonType="button", styleType, onClickHandler }) {
   return (
     <button 
         onClick={onClickHandler}
