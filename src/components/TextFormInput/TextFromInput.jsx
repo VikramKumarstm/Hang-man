@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 function TextFromInput({onSubmit}) {
 
     const [value, setValue] = useState('')
+    const [inputType, setInputType] = useState('')
 
     const handleFormSubmit = (event) => {
 
@@ -24,10 +25,18 @@ function TextFromInput({onSubmit}) {
     <form className="flex items-center" onSubmit={handleFormSubmit}>
       <div className="mr-2 ml-2 flex-1">
         <TextInput 
-            type="new-password" 
+            type={inputType} 
             label="Enter a word or phrase"
             value={value}
             onChange={handleTextInputChange} 
+        />
+      </div>
+      <div className="">
+        <Button
+            text={inputType === "password" ? "Show" : "Hide"}
+            onClickHandler={() => setInputType(inputType === "password" ? "text" : "password")}
+            buttonType="submit"
+            styleType="primary" 
         />
       </div>
       <div className="">
